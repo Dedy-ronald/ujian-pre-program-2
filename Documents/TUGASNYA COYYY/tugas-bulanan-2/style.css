@@ -661,3 +661,119 @@ height: 280px;
         font-size: 1.75rem;
     }
 }
+
+/* ==========================================================================
+   STYLING HALAMAN TABEL DATA PRODUK (`produk.html`)
+   ========================================================================== */
+
+.halaman-produk-tabel {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.kontainer-tabel-produk {
+    flex-grow: 1;
+    padding: 60px 0;
+}
+
+/* Styling Bagian Unordered List (<ul>) Catatan Belanja */
+.kotak-catatan-belanja {
+    background: rgba(126, 25, 251, 0.05);
+    border-left: 4px solid var(--warna-utama);
+    padding: 20px 24px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 36px;
+    border-top: 1px solid rgba(126, 25, 251, 0.1);
+    border-right: 1px solid rgba(126, 25, 251, 0.1);
+    border-bottom: 1px solid rgba(126, 25, 251, 0.1);
+}
+
+.kotak-catatan-belanja h3 {
+    font-size: 1.1rem;
+    color: var(--warna-terang);
+    margin-bottom: 10px;
+}
+
+.catatan-belanja {
+    list-style-position: inside;
+    color: var(--warna-abu);
+    font-size: 0.95rem;
+}
+
+.catatan-belanja li {
+    margin-bottom: 6px;
+}
+
+.catatan-belanja li:last-child {
+    margin-bottom: 0;
+}
+
+/* Kriteria Responsive Table: Mencegah layout hancur di layar kecil */
+.pembungkus-tabel-responsive {
+    width: 100%;
+    overflow-x: auto; /* Memunculkan scroll horizontal jika layar HP terlalu sempit */
+    -webkit-overflow-scrolling: touch;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Kriteria Dasar Styling Tabel dengan Border-Collapse */
+.tabel-data-produk {
+    width: 100%;
+    border-collapse: collapse; /* Menyatukan garis border cell */
+    background-color: #161619;
+    text-align: left;
+    font-size: 0.95rem;
+    min-width: 700px; /* Memaksa scroll aktif di HP agar tabel tetap mudah dibaca */
+}
+
+/* Styling Bagian Header Tabel (<th>) */
+.tabel-data-produk th {
+    background-color: rgba(126, 25, 251, 0.15);
+    font-family: var(--font-judul);
+    font-weight: 600;
+    color: var(--warna-terang);
+    padding: 16px 20px;
+    border-bottom: 2px solid var(--warna-utama);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+/* Styling Bagian Konten Tabel (<td>) */
+.tabel-data-produk td {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Mengatur ukuran lebar khusus untuk kolom nomor */
+.tabel-data-produk th:first-child,
+.tabel-data-produk td:first-child {
+    text-align: center;
+    width: 60px;
+}
+
+/* Kriteria Striped Rows Menggunakan Pseudo-class :nth-child(even) */
+.tabel-data-produk tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Kriteria Hover Effect Pada Baris Tabel (<tr>) */
+.tabel-data-produk tbody tr:hover {
+    background-color: rgba(126, 25, 251, 0.08);
+    transition: background-color 0.2s ease;
+}
+
+/* Memberi warna khusus penanda jika stok habis/restock soon */
+.tabel-data-produk td:last-child {
+    font-weight: 600;
+}
+
+.tabel-data-produk td:contains("Soon"), 
+.tabel-data-produk td:filter-contains {
+    color: #e11d48;
+}
+
