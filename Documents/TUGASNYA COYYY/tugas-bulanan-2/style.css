@@ -1,0 +1,463 @@
+/* ==========================================================================
+   RESET & VARIABEL GLOBAL (Box Model & Typography)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --warna-utama: rgb(126, 25, 251);     /* Ungu neon khas kalcer */
+    --warna-utama-hover: rgb(98, 14, 204);
+    --warna-gelap: #0e0e10;
+    --warna-terang: #ffffff;
+    --warna-abu: #a1a1aa;
+    --gradasi-latar: linear-gradient(135deg, #1f1f21 0%, #0e0e10 100%);
+    --font-judul: 'Space Grotesk', sans-serif;
+    --font-konten: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-konten);
+    background: var(--gradasi-latar);
+    background-attachment: fixed;
+    color: var(--warna-terang);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-judul);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+
+/* Kriteria CSS Unit: Kombinasi % dan max-width px */
+.wadah {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGASI (Kriteria Flexbox)
+   ========================================================================== */
+#header-utama {
+    background-color: rgba(14, 14, 16, 0.85);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 20px 0;
+}
+
+.bar-navigasi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-toko {
+    font-family: var(--font-judul);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #38bdf8, #a855f7);    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-toko i {
+    color: var(--warna-utama);
+}
+
+.menu-navigasi {
+    display: flex;
+    gap: 32px;
+}
+
+.tautan-nav {
+    color: var(--warna-abu);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Kriteria Pseudo-classes: :hover */
+.tautan-nav:hover {
+    color: var(--warna-utama);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 80px;
+    background:
+      linear-gradient(rgba(14, 14, 16, 0.6), rgba(14, 14, 16, 0.95)),
+      url("https://i.shgcdn.com/61b324de-9846-4ab5-9c48-8f1b7020d617/-/format/auto/-/preview/3000x3000/-/quality/lighter/") center center / cover no-repeat;
+}
+
+.hero-isi { 
+    max-width: 700px; 
+}
+
+.label-hero {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 6px 18px;
+    border: 1px dashed var(--warna-utama); 
+    border-radius: 999px;
+    color: var(--warna-utama);
+    font-family: var(--font-judul);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 20px;
+}
+
+.hero .intro { 
+    font-size: 1.25rem;
+    color: var(--warna-abu);
+    margin-bottom: 36px; 
+}
+
+.hero-tombol {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.tombol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tombol.tombol-utama {
+    background-color: var(--warna-utama);
+    color: var(--warna-terang);
+}
+
+.tombol.tombol-utama:hover {
+    background-color: var(--warna-utama-hover);
+    transform: translateY(-3px);
+}
+
+.tombol-luar {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--warna-terang);
+}
+
+.tombol-luar:hover {
+    border-color: var(--warna-utama);
+    background-color: rgba(126, 25, 251, 0.1);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   PARALLAX / FEATURE SECTION
+   ========================================================================== */
+.seksi-parallax {
+    padding: 100px 0;
+    background:
+      linear-gradient(rgba(14, 14, 16, 0.8), rgba(14, 14, 16, 0.8)),
+      url("https://varsityforge.com/cdn/shop/files/varsity-forge-mens-womens-banner.jpg?v=1767990362&width=3840") center center / cover no-repeat;
+    background-attachment: fixed;
+}
+
+.kotak-cerita {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px; 
+    background-color: rgba(20, 20, 25, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+.kotak-cerita h2 {
+    margin-bottom: 16px;
+    font-size: 2rem;
+}
+
+/* ==========================================================================
+   PRODUK SECTION (Kriteria CSS Grid & Shadows)
+   ========================================================================== */
+.seksi-produk {
+    padding: 100px 0;
+}
+
+.judul-seksi {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.judul-seksi h2 {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Kriteria Pseudo-elements: ::after untuk dekorasi garis bawah */
+.judul-seksi h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--warna-utama);
+    border-radius: 2px;
+}
+
+.judul-seksi p {
+    color: var(--warna-abu);
+}
+
+/* Kriteria CSS Grid Utama */
+.grid-produk {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Kriteria Box Model, Shadow, & Position Relative */
+.kartu-produk {
+    background-color: #161619;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden; /* Kriteria Overflow Hidden */
+    position: relative; /* Kriteria Position Relative untuk Badge */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Kriteria Box-shadow */
+}
+
+.kartu-produk:hover {
+    transform: translateY(-10px);
+    border-color: rgba(126, 25, 251, 0.4);
+    box-shadow: 0 20px 40px rgba(126, 25, 251, 0.15);
+}
+
+.pembungkus-gambar {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background-color: #202024;
+}
+
+.kartu-produk img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.kartu-produk:hover img {
+    transform: scale(1.06);
+}
+
+.isi-kartu-produk { 
+    padding: 28px; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.kartu-produk h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--warna-terang);
+}
+
+.deskripsi-produk {
+    font-size: 0.9rem;
+    color: var(--warna-abu);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.harga-kartu { 
+    color: var(--warna-terang); 
+    font-family: var(--font-judul); 
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+/* Kriteria Position: Absolute untuk Elemen Badge */
+.badge-best-seller {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: #e11d48; /* Merah menyala */
+    color: var(--warna-terang);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    z-index: 10;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+}
+
+/* ==========================================================================
+   FOOTER (Kriteria Flexbox)
+   ========================================================================== */
+footer {
+    background-color: #070708;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 80px 0 30px;
+    margin-top: 50px;
+}
+
+.isi-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.info-footer {
+    max-width: 360px;
+}
+
+.logo-footer {
+    font-family: var(--font-judul);
+    font-size: 1.75rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+    background: linear-gradient(to right, #38bdf8, #a855f7);    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.info-footer p {
+    color: var(--warna-abu);
+    font-size: 0.9rem;
+}
+
+.kontak-footer, .sosmed-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.kontak-footer a, .sosmed-footer a {
+    color: var(--warna-abu);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.kontak-footer a:hover {
+    color: var(--warna-utama);
+}
+
+.sosmed-footer {
+    flex-direction: row;
+    gap: 16px;
+}
+
+.sosmed-footer a {
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.sosmed-footer a:hover {
+    color: var(--warna-terang);
+    background-color: var(--warna-utama);
+    transform: translateY(-3px);
+}
+
+.hak-cipta {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    color: #52525b;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Kriteria Media Queries)
+   ========================================================================== */
+
+/* Tahap 1: Tampilan Tablet (>= 768px hingga < 1024px) */
+@media (max-width: 1023px) {
+    .grid-produk {
+        grid-template-columns: repeat(2, 1fr); /* Menjadi 2 Kolom */
+        gap: 24px;
+    }
+    /* Kriteria Pseudo-classes: :nth-child untuk tugas demonstrasi */
+    .grid-produk .kartu-produk:nth-child(3) {
+        grid-column: span 2; /* Kartu ke-3 memenuhi baris bawah pada tablet */
+    }
+}
+
+/* Tahap 2: Tampilan Mobile (< 768px) */
+@media (max-width: 767px) {
+    .bar-navigasi {
+        flex-direction: column;
+gap: 20px;
+}
+.hero {
+padding: 100px 0 60px;
+text-align: center;
+}
+.hero-tombol {
+justify-content: center;
+}
+.grid-produk {
+grid-template-columns: 1fr; /* Menjadi 1 Kolom */
+}
+.grid-produk .kartu-produk:nth-child(3) {
+grid-column: span 1;
+}
+.isi-footer {
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 30px;
+}
+.kontak-footer a {
+justify-content: center;
+}
+.pembungkus-gambar {
+height: 280px;
+}
+}
