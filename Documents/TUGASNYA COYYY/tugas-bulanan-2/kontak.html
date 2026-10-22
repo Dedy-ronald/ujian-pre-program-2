@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Meta tags untuk SEO & Responsive -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi Toko Kalcer Wear - Form Pendaftaran dan Kontak Generasi Z">
+    <meta name="keywords" content="kontak varsity kalcer, pendaftaran member varsity">
+    <meta name="author" content="Mr D">
+
+    <!-- Favicon dan Title -->
+    <title>Gabung Kalcer - Varsity Kalcer</title>
+    <link rel="icon" href="./e1ea58f865d810a9d4c9baabd516f081.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cloudflare.com" /> 
+
+    <!-- Terhubung ke satu file CSS yang sama -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="halaman-kontak">
+    
+    <!-- Header & Navigasi Utama (Sama seperti index.html)-->
+     <header id="header-utama">
+        <div class="wadah bar-navigasi">
+            <div class="logo-toko">
+                <i class="fa-solid fa-jacket"></i> <span>Varsity Kalcer</span>
+            </div>
+            <nav class="menu-navigasi">
+            <a href="./index.html" class="tautan-nav">Tentang</a>
+            <a href="./produk.html" class="tautan-nav">Produk</a>
+            <a href="./kontak.html" class="tautan-nav">Kontak</a>
+            </nav>
+        </div>
+     </header>
+
+
+     <!-- Pembungkus Form Utama untuk Flexboxing Centering -->
+      <main class="kontainer-form-kontak">
+        <section class="seksi-form">
+            <div class="judul-form">
+                <h2> Join The Kalcer Club</h2>
+                <p>Daftarkan diri lu buat dapet rekomendasi varsity lainnya!</p>
+            </div>
+
+            <!-- Form Implementasi Atribut Action & Method -->
+             <form action="#" method="post" class="form-pendaftaran">
+
+
+                <!-- Data Pribadi Menggunakan Fieldset & Legend -->
+                 <fieldset class="grup-form">
+                    <legend class="label-grup">Data Pribadi Lu</legend>
+
+                    <div class="baris-input">
+                        <label for="nama-lengkap">Nama Lengkap(Wajib)</label>
+
+                        <input type="text" id="nama-lengkap" name="nama lengkap" placeholder="Masukin Nama Lengkap Lu..." required>
+                    </div>
+
+                    <div class="baris-input">
+                        <label for="email-user">Email Aktif(Wajib)</label>
+
+                        <input type="email" id="email-user" name="email" placeholder="contohnih@gmail.com" required>
+                    </div>
+
+
+                    <div class="baris-input">
+                        <label for="password-user">Password (Min.8 Karakter)</label>
+                        <input type="password" id="password-user" name="password" minlength="8" placeholder="Minimal 8 karakter" required>
+                    </div>
+
+                    <div class="baris-input">
+                        <label for="tgl-lahir">Tanggal Lahir</label>
+                        <input type="date" id="tgl-lahir" name="tanggal_lahir">
+                    </div>
+                 </fieldset>
+
+
+                 <!-- Detail Alamat Pengiriman -->
+                  <fieldset class="grup-form">
+                    <legend class="label-grup">Lokasi & Pengiriman</legend>
+
+                    <div class="baris-input">
+                        <label for="pilihan-kota">Kota Domisili</label>
+                        <select id="pilihan-kota" name="kota">
+                            <option value="">-- Pilih Kota Lu --</option>
+                            <option value="jakarta">Jakarta (Pusat Kalcer)</option>
+                            <option value="bandung">Bandung (Kota Mode)</option>
+                            <option value="yogyakarta">Yogyakarta (Kalcer Klasik)</option>
+                            <option value="surabaya">Surabaya (Kalcer Keras)</option>
+                            <option value="medan">Medan (Kalcer Ring 1)</option>
+                        </select>
+                    </div>
+
+                    <div class="baris-input">
+                        <label for="kode-pos">Kode Pos</label>
+                        <input type="number" id="kode-pos" name="kode_pos" placeholder="Contoh: 55181">
+                    </div>
+                  </fieldset>
+
+                <!--Preferensi Tambahan-->
+                <fieldset class="grup-form">
+                    <legend class="label-grup">Preferensi & Validasi</legend>
+
+
+                 <!-- Pilihan Radio (Jenis Kelamin) -->
+                    <div class="baris-input-pilihan">
+                        <span class="label-pilihan-judul">Jenis Kelamin:</span>
+                        <div class="opsi-opsi">
+                            <label class="label-radio">
+                                <input type="radio" id="gender-l" name="jenis_kelamin" value="Laki-laki"> Laki-laki
+                            </label>
+                            <label class="label-radio">
+                                <input type="radio" id="gender-p" name="jenis_kelamin" value="Perempuan"> Perempuan
+                            </label>
+                        </div>
+                    </div>
+
+                <!-- Textarea Pesan Tambahan -->
+                    <div class="baris-input">
+                        <label for="pesan-tambahan">Catatan / Style Profile Tambahan</label>
+                        <textarea id="pesan-tambahan" name="pesan" rows="4" placeholder="Kasih tahu kita style atau ukuran favorit lu..."></textarea>
+                    </div>
+
+                <!-- Checkbox Syarat & Ketentuan -->
+                    <div class="baris-input-checkbox">
+                        <input type="checkbox" id="persetujuan-terms" name="persetujuan" required>
+                        <label for="persetujuan-terms">Gue setuju dengan semua Terms & Conditions Varsity Kalcer.</label>
+                    </div>
+                </fieldset>
+
+
+                <!-- Tombol Submit -->
+                <div class="aksi-form">
+                    <input type="submit" value="Kirim Data Lu" class="tombol-kirim-form">
+                </div>
+             </form>
+        </section>
+      </main>
+
+      <!-- Footer Semantik-->
+       <footer>
+            <div class="wadah isi-footer">
+                <div class="logo-footer">
+                    <span class="logo-footer">Varsity Kalcer</span>
+                    <p>KITA TIDAK MENGIKUTI TREN, TAPI MENCIPTAKAN TREN ITU SENDIRI</p>
+                </div>
+
+                <div class="kontak-footer">
+                    <a href="mailto:varkal@gmail.co.id"><i class="fa-solid fa-envelope"></i> varkal@gmail.co.id</a>
+                                    <a href="tel:+6281234567890"><i class="fa-solid fa-phone"></i> +62812 3456 7890</a>
+            </div>
+            <div class="sosmed-footer">
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            </div>
+            <div class="hak-cipta">
+                <p>&copy; 2026 Valkar. Seluruh hak cipta dilindungi.</p>
+            </div>
+    </footer>
+</body>
+</html>

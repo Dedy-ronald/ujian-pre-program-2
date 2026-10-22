@@ -461,3 +461,203 @@ justify-content: center;
 height: 280px;
 }
 }
+
+/* Tambahan Style Css Kontak*/
+
+.halaman-kontak{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*Kriteria Flexbox: Form di-center secara horizontal dan vertikal*/
+.kontainer-form-kontak {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.seksi-form {
+    background-color: #161619;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.judul-form {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.judul-form h2 {
+    font-size: 2.25rem;
+    color: var(--warna-terang);
+    margin-bottom: 8px;
+}
+
+.judul-form p{
+    color: var(--warna-abu);
+    font-size: 0.95rem;
+}
+
+/*Kriteria Fieldset dan Legend Pengelompokan Form*/
+.grup-form {
+    border:1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+    background-color:rgba(0, 0, 0, 0.15) ;
+}
+
+.label-grup {
+    font-family: var(--font-judul);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--warna-utama);
+    padding: 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.baris-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.baris-input:last-child {
+    margin-bottom: 0;
+}
+
+.baris-input label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Kriteria Styling Input dengan Padding, Border, dan Border Radius */
+.form-pendaftaran input[type="text"],
+.form-pendaftaran input[type="email"],
+.form-pendaftaran input[type="tel"],
+.form-pendaftaran input[type="password"],
+.form-pendaftaran input[type="date"],
+.form-pendaftaran input[type="number"],
+.form-pendaftaran select,
+.form-pendaftaran textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #202024;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: var(--warna-terang);
+    font-family: var(--font-konten);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* Merapikan tampilan picker kalender bawaan browser agar tetap gelap */
+.form-pendaftaran input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Kriteria Focus State Menggunakan Pseudo-class :focus */
+.form-pendaftaran input:focus,
+.form-pendaftaran select:focus,
+.form-pendaftaran textarea:focus {
+    outline: none;
+    border-color: var(--warna-utama);
+    background-color: #242429;
+    box-shadow: 0 0 0 3px rgba(126, 25, 251, 0.25);
+}
+
+/* Styling Pilihan Radio & Checkbox */
+.baris-input-pilihan {
+    margin-bottom: 18px;
+}
+
+.label-pilihan-judul {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.opsi-opsi {
+    display: flex;
+    gap: 24px;
+}
+
+.label-radio, .baris-input-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--warna-abu);
+    cursor: pointer;
+}
+
+.baris-input-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.baris-input-checkbox input[type="checkbox"] {
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+/* Kriteria Tombol Submit dengan Efek Hover */
+.aksi-form {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.tombol-kirim-form {
+    width: 100%;
+    padding: 14px 40px;
+    background-color: var(--warna-utama);
+    color: var(--warna-terang);
+    border: none;
+    border-radius: 999px;
+    font-family: var(--font-judul);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(126, 25, 251, 0.3);
+}
+
+/* Efek Hover Tombol Submit */
+.tombol-kirim-form:hover {
+    background-color: var(--warna-utama-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(126, 25, 251, 0.5);
+}
+
+/* Penyesuaian Responsif Form pada Layar Kecil (Mobile) */
+@media (max-width: 767px) {
+    .seksi-form {
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+
+        .grup-form {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .judul-form h2 {
+        font-size: 1.75rem;
+    }
+}
